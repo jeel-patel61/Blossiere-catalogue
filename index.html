@@ -1,1 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Blossière — Handcrafted Candles · Ahmedabad</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --ink:#0F0C09;
+  --cream:#FBF8F3;
+  --warm:#F4EDE0;
+  --parch:#EDE3D2;
+  --gold:#B8852A;
+  --gold2:#D4A843;
+  --rose:#B85C70;
+  --sage:#6E8F70;
+  --muted:#887060;
+  --bd:rgba(184,133,42,0.16);
+}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--ink);font-family:'DM Sans',sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden}
 
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px 64px;
+  background:rgba(251,248,243,0.95);
+  backdrop-filter:blur(14px);
+  border-bottom:0.5px solid var(--bd);
+}
+.logo{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:400;letter-spacing:0.2em;color:var(--ink);text-decoration:none}
+.logo span{color:var(--gold)}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--gold)}
+.nav-wa{
+  display:flex;align-items:center;gap:8px;
+  background:#25D366;color:#fff;
+  padding:9px 20px;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;
+  text-decoration:none;font-family:'DM Sans',sans-serif;font-weight:500;
+  transition:opacity .2s;
+}
+.nav-wa:hover{opacity:.88}
+
+/* HERO */
+.hero{
+  min-height:100vh;
+  display:grid;grid-template-columns:55% 45%;
+  padding-top:58px;
+}
+.hero-img{position:relative;overflow:hidden;background:var(--ink)}
+.hero-img img{width:100%;height:100%;object-fit:cover;opacity:.82;transition:transform 10s ease}
+.hero-img:hover img{transform:scale(1.03)}
+.hero-img-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(15,12,9,.22),transparent)}
+.hero-text{
+  display:flex;flex-direction:column;justify-content:center;
+  padding:72px 80px 72px 64px;
+}
+.hero-eyebrow{
+  font-size:10px;letter-spacing:0.32em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:24px;
+  display:flex;align-items:center;gap:14px;
+}
+.hero-eyebrow::before{content:'';width:24px;height:0.5px;background:var(--gold)}
+h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(52px,5.5vw,80px);font-weight:300;
+  line-height:1.06;margin-bottom:20px;
+}
+h1 em{font-style:italic;color:var(--rose)}
+.hero-body{font-size:14px;color:var(--muted);max-width:360px;line-height:1.9;margin-bottom:36px}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
+.btn-dark{
+  background:var(--ink);color:var(--cream);
+  padding:12px 32px;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;
+  text-decoration:none;font-family:'DM Sans',sans-serif;font-weight:500;
+  transition:background .2s,transform .15s;display:inline-block;
+}
+.btn-dark:hover{background:var(--gold);transform:translateY(-2px)}
+.btn-ghost{
+  border:0.5px solid rgba(15,12,9,.28);color:var(--ink);
+  padding:12px 32px;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;
+  text-decoration:none;font-family:'DM Sans',sans-serif;font-weight:400;
+  transition:border-color .2s,color .2s;display:inline-block;
+}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+
+/* TICKER */
+.ticker{background:var(--ink);padding:12px;overflow:hidden;white-space:nowrap}
+.ticker-inner{display:inline-flex;gap:40px;animation:tick 24s linear infinite}
+.ticker-inner span{font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(251,248,243,0.38);flex-shrink:0}
+.ticker-inner span.g{color:var(--gold2);opacity:.7}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* SECTION SHELL */
+.sec{padding:88px 0}
+.sec-cream{background:var(--cream)}
+.sec-warm{background:var(--warm)}
+.sec-parch{background:var(--parch)}
+.sec-dark{background:var(--ink)}
+.wrap{max-width:1160px;margin:0 auto;padding:0 64px}
+
+.sec-label{font-size:10px;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;font-weight:500}
+.sec-title{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,3.6vw,50px);font-weight:400;line-height:1.12;margin-bottom:12px}
+.sec-title em{font-style:italic;color:var(--rose)}
+.sec-sub{font-size:14px;color:var(--muted);max-width:460px;line-height:1.85;margin-bottom:48px}
+.rule{width:40px;height:0.5px;background:var(--gold);margin:18px 0;opacity:.5}
+
+/* PRODUCT ROWS — full bleed alternating */
+.prod-row{
+  display:grid;grid-template-columns:1fr 1fr;
+  min-height:540px;
+}
+.prod-row + .prod-row{border-top:1px solid var(--bd)}
+.prod-img{position:relative;overflow:hidden;background:var(--ink)}
+.prod-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s cubic-bezier(.25,.46,.45,.94)}
+.prod-img:hover img{transform:scale(1.05)}
+.prod-img-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(15,12,9,.28),transparent 55%)}
+.sku-chip{position:absolute;top:18px;left:18px;background:rgba(184,133,42,.88);color:var(--ink);font-size:9px;letter-spacing:.16em;text-transform:uppercase;padding:4px 10px;font-weight:500;font-family:'DM Sans',sans-serif}
+.new-chip{position:absolute;top:18px;right:18px;background:var(--rose);color:#fff;font-size:9px;letter-spacing:.14em;text-transform:uppercase;padding:4px 10px;font-weight:500;font-family:'DM Sans',sans-serif}
+
+.prod-content{
+  display:flex;flex-direction:column;justify-content:center;
+  padding:56px 68px;position:relative;
+  background:var(--cream);
+}
+.prod-content.warm-bg{background:var(--warm)}
+.prod-content.parch-bg{background:var(--parch)}
+.prod-num{
+  position:absolute;top:20px;right:28px;
+  font-family:'Cormorant Garamond',serif;font-size:68px;font-weight:300;
+  color:rgba(184,133,42,.08);line-height:1;pointer-events:none;
+}
+.prod-cat{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;font-weight:500}
+.prod-name{font-family:'Cormorant Garamond',serif;font-size:clamp(24px,2.8vw,38px);font-weight:500;line-height:1.12;margin-bottom:12px}
+.prod-name em{font-style:italic;color:var(--rose)}
+.prod-desc{font-size:13px;color:var(--muted);line-height:1.85;margin-bottom:18px;max-width:340px}
+.prod-specs{display:flex;flex-direction:column;gap:5px;margin-bottom:18px}
+.prod-spec{font-size:12px;color:var(--ink);display:flex;align-items:center;gap:10px}
+.prod-spec::before{content:'';width:12px;height:0.5px;background:var(--gold)}
+.prod-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:22px}
+.prod-tag{font-size:10px;padding:3px 10px;border:0.5px solid var(--bd);color:var(--muted);letter-spacing:.06em}
+
+/* PRICE STRIP */
+.price-strip{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px 18px;background:var(--ink);color:var(--cream);
+  margin-bottom:20px;
+}
+.price-amount{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:500}
+.price-note{font-size:11px;color:rgba(251,248,243,.38);letter-spacing:.04em}
+.price-range{font-size:11px;color:var(--gold2);letter-spacing:.06em}
+
+/* COMBOS */
+.combo-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:2px;
+  background:rgba(184,133,42,.1);
+}
+.combo-card{
+  background:rgba(15,12,9,.88);
+  border:0.5px solid rgba(184,133,42,.1);
+  transition:border-color .25s,transform .25s;
+  cursor:pointer;position:relative;overflow:hidden;
+}
+.combo-card:hover{border-color:rgba(184,133,42,.4);transform:translateY(-3px);z-index:2}
+.combo-img{height:210px;overflow:hidden;position:relative}
+.combo-img img{width:100%;height:100%;object-fit:cover;filter:saturate(.7) brightness(.78);transition:filter .4s,transform .5s}
+.combo-card:hover .combo-img img{filter:saturate(1) brightness(.9);transform:scale(1.05)}
+.oc{position:absolute;top:10px;left:10px;padding:3px 9px;font-size:9px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;font-family:'DM Sans',sans-serif}
+.oc-gold{background:var(--gold);color:var(--ink)}
+.oc-rose{background:var(--rose);color:#fff}
+.oc-sage{background:var(--sage);color:#fff}
+.oc-cream{background:rgba(251,248,243,.15);color:var(--cream)}
+.combo-body{padding:22px 20px 26px}
+.combo-sku{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:rgba(184,133,42,.55);margin-bottom:5px;font-weight:500}
+.combo-name{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:500;color:var(--cream);margin-bottom:4px}
+.combo-occ{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;color:var(--rose);margin-bottom:14px}
+.combo-list{list-style:none;margin-bottom:16px}
+.combo-list li{font-size:11px;color:rgba(251,248,243,.36);padding:4px 0;border-bottom:0.5px solid rgba(184,133,42,.07);display:flex;align-items:center;gap:8px}
+.combo-list li::before{content:'·';color:var(--gold)}
+.combo-footer{display:flex;align-items:flex-end;justify-content:space-between}
+.combo-price{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:500;color:var(--gold2)}
+.combo-old{font-size:11px;color:rgba(251,248,243,.22);text-decoration:line-through;margin-bottom:2px}
+.combo-badge{font-size:9px;background:rgba(110,143,112,.18);color:#7EC880;padding:3px 8px;letter-spacing:.06em}
+
+/* BYOB */
+.byob-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:2px;background:var(--bd);
+  margin-top:44px;
+}
+.byob-step{background:var(--cream);padding:32px 28px}
+.byob-n{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:300;color:rgba(184,133,42,.12);line-height:1;margin-bottom:8px}
+.byob-t{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:500;margin-bottom:6px}
+.byob-d{font-size:12px;color:var(--muted);line-height:1.7}
+
+/* ORDER */
+.order-sec{padding:88px 64px;text-align:center;background:var(--ink)}
+.order-title{font-family:'Cormorant Garamond',serif;font-size:clamp(38px,5vw,68px);font-weight:300;color:var(--cream);margin-bottom:14px;line-height:1.1}
+.order-title em{font-style:italic;color:var(--gold2)}
+.order-sub{font-size:14px;color:rgba(251,248,243,.38);max-width:420px;margin:0 auto 40px;line-height:1.85}
+.wa-big{
+  display:inline-flex;align-items:center;gap:10px;
+  background:#25D366;color:#fff;
+  padding:14px 38px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+  text-decoration:none;font-family:'DM Sans',sans-serif;font-weight:500;
+  transition:opacity .2s,transform .15s;
+}
+.wa-big:hover{opacity:.88;transform:translateY(-2px)}
+.trust-row{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin-top:36px}
+.trust-item{font-size:11px;color:rgba(251,248,243,.25);letter-spacing:.1em;display:flex;align-items:center;gap:7px}
+.trust-item::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--gold);opacity:.5}
+
+/* FOOTER */
+footer{background:#090603;padding:32px 64px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.foot-logo{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--gold);letter-spacing:.2em;font-weight:300}
+.foot-line{font-size:11px;color:rgba(251,248,243,.18);letter-spacing:.08em}
+
+/* STICKY */
+.sticky-wa{
+  position:fixed;bottom:20px;right:20px;z-index:300;
+  background:#25D366;color:#fff;
+  padding:11px 18px;display:flex;align-items:center;gap:7px;
+  font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  text-decoration:none;font-family:'DM Sans',sans-serif;font-weight:500;
+  box-shadow:0 4px 20px rgba(37,211,102,.28);transition:opacity .2s;
+}
+.sticky-wa:hover{opacity:.88}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  nav{padding:14px 24px}
+  .nav-links{display:none}
+  .hero,.prod-row{grid-template-columns:1fr}
+  .hero .hero-img{min-height:52vw}
+  .hero-text,.prod-content{padding:40px 28px}
+  .wrap{padding:0 24px}
+  .combo-grid{grid-template-columns:1fr 1fr}
+  .byob-grid{grid-template-columns:1fr 1fr}
+  .order-sec{padding:64px 24px}
+  footer{padding:24px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="logo" href="#">Bloss<span>ière</span></a>
+  <ul class="nav-links">
+    <li><a href="#products">Collection</a></li>
+    <li><a href="#combos">Gift Sets</a></li>
+    <li><a href="#byob">BYOB</a></li>
+    <li><a href="#order">Order</a></li>
+  </ul>
+  <a class="nav-wa" href="https://wa.me/919999999999?text=Hi+Blossiere+I+saw+your+catalogue+and+want+to+order!" target="_blank">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    WhatsApp
+  </a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-img">
+    <img src="img01.jpg" alt="Blossiere candles in a home">
+    <div class="hero-img-overlay"></div>
+  </div>
+  <div class="hero-text">
+    <div class="hero-eyebrow">Pre-launch · Ahmedabad 2025</div>
+    <h1>Where every<br>flame tells <em>a story</em></h1>
+    <p class="hero-body">Handcrafted candles made in Ahmedabad — tealights, votive jars, sculptural peonies, daisy blooms, wax sachets, and curated gift boxes. Each one poured with care.</p>
+    <div class="hero-ctas">
+      <a href="#products" class="btn-dark">Explore Collection</a>
+      <a href="#order" class="btn-ghost">Pre-order Free</a>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner">
+    <span>Tealights</span><span class="g">·</span>
+    <span>Votive Jars</span><span class="g">·</span>
+    <span>Peony Sculpt</span><span class="g">·</span>
+    <span>Daisy Bloom</span><span class="g">·</span>
+    <span>Wax Sachets</span><span class="g">·</span>
+    <span>BYOB Gift Box</span><span class="g">·</span>
+    <span>12 Fragrances</span><span class="g">·</span>
+    <span>Custom Colors</span><span class="g">·</span>
+    <span>Diwali · Wedding · Corporate</span><span class="g">·</span>
+    <span>Ahmedabad Made</span><span class="g">·</span>
+    <span>Tealights</span><span class="g">·</span>
+    <span>Votive Jars</span><span class="g">·</span>
+    <span>Peony Sculpt</span><span class="g">·</span>
+    <span>Daisy Bloom</span><span class="g">·</span>
+    <span>Wax Sachets</span><span class="g">·</span>
+    <span>BYOB Gift Box</span><span class="g">·</span>
+    <span>12 Fragrances</span><span class="g">·</span>
+    <span>Custom Colors</span><span class="g">·</span>
+    <span>Diwali · Wedding · Corporate</span><span class="g">·</span>
+    <span>Ahmedabad Made</span><span class="g">·</span>
+  </div>
+</div>
+
+<!-- PRODUCTS -->
+<section id="products" style="padding:88px 0 0;background:var(--cream)">
+  <div class="wrap" style="padding-bottom:52px">
+    <div class="sec-label">The Collection</div>
+    <h2 class="sec-title">Five products, <em>made by hand</em></h2>
+    <p class="sec-sub">Each candle is poured in small batches in Ahmedabad. Available in custom colors, fragrances, and sizes for every occasion.</p>
+  </div>
+
+  <!-- 01 TEALIGHTS -->
+  <div class="prod-row">
+    <div class="prod-img">
+      <img src="img02.jpg" alt="Spectrum Tealights">
+      <div class="prod-img-overlay"></div>
+      <span class="sku-chip">BLS-TL-001</span>
+      <span class="new-chip">Bestseller</span>
+    </div>
+    <div class="prod-content">
+      <div class="prod-num">01</div>
+      <div class="prod-cat">Tealight Collection</div>
+      <h3 class="prod-name">Spectrum <em>Tealights</em></h3>
+      <p class="prod-desc">12 individually crafted tealights, each a distinct shade and fragrance. From deep burgundy oud to soft mint eucalyptus — displayed in a flat compartment gift box. The gift that opens like a painter's palette.</p>
+      <div class="prod-specs">
+        <div class="prod-spec">Burn time: 4–5 hrs per tealight</div>
+        <div class="prod-spec">Premium paraffin blend</div>
+        <div class="prod-spec">12 colors · 12 fragrances</div>
+        <div class="prod-spec">Flat gift box included</div>
+      </div>
+      <div class="prod-tags">
+        <span class="prod-tag">Set of 12</span>
+        <span class="prod-tag">Gift-ready</span>
+        <span class="prod-tag">Diwali</span>
+        <span class="prod-tag">Custom shades</span>
+      </div>
+      <div class="price-strip">
+        <div class="price-amount">₹ 599</div>
+        <div>
+          <div class="price-note">Set of 12 · incl. packaging</div>
+        </div>
+      </div>
+      <a href="#order" class="btn-dark" style="align-self:flex-start">Pre-order</a>
+    </div>
+  </div>
+
+  <!-- 02 VOTIVE JAR -->
+  <div class="prod-row" style="direction:rtl">
+    <div class="prod-img" style="direction:ltr">
+      <img src="img03.jpg" alt="Noir Votive Jar">
+      <div class="prod-img-overlay"></div>
+      <span class="sku-chip">BLS-VJ-002</span>
+    </div>
+    <div class="prod-content parch-bg" style="direction:ltr">
+      <div class="prod-num">02</div>
+      <div class="prod-cat">Votive Jar</div>
+      <h3 class="prod-name">Noir <em>Votive</em></h3>
+      <p class="prod-desc">A matte black glass jar with 180g of 100% soy wax. Cotton wick, near-zero soot, clean and long-burning. Arrives sealed — timeless enough to live on your shelf long after the wax is gone.</p>
+      <div class="prod-specs">
+        <div class="prod-spec">180g soy wax · ~40 hr burn</div>
+        <div class="prod-spec">Matte black glass jar + lid</div>
+        <div class="prod-spec">Cotton wick · minimal smoke</div>
+        <div class="prod-spec">6 fragrance options</div>
+      </div>
+      <div class="prod-tags">
+        <span class="prod-tag">Soy Wax</span>
+        <span class="prod-tag">40 hr burn</span>
+        <span class="prod-tag">Corporate</span>
+        <span class="prod-tag">Home décor</span>
+      </div>
+      <div class="price-strip">
+        <div class="price-amount">₹ 499</div>
+        <div>
+          <div class="price-note">Single jar · gift-boxed</div>
+        </div>
+      </div>
+      <a href="#order" class="btn-dark" style="align-self:flex-start">Pre-order</a>
+    </div>
+  </div>
+
+  <!-- 03 PEONY -->
+  <div class="prod-row">
+    <div class="prod-img" style="background:var(--warm)">
+      <img src="img04.png" alt="Peony Sculptural Candle" style="object-fit:contain;padding:48px">
+      <div class="prod-img-overlay"></div>
+      <span class="sku-chip">BLS-PN-003</span>
+      <span class="new-chip">New</span>
+    </div>
+    <div class="prod-content warm-bg">
+      <div class="prod-num">03</div>
+      <div class="prod-cat">Sculptural Series</div>
+      <h3 class="prod-name">Peony <em>Bloom</em></h3>
+      <p class="prod-desc">Three hand-moulded peony candles — white, blush, and deep rose — on a minimal clay tray. Each petal individually detailed. Bulgarian rose and peach fragrance. Almost too beautiful to burn.</p>
+      <div class="prod-specs">
+        <div class="prod-spec">8–10 hr burn each</div>
+        <div class="prod-spec">Bulgarian rose & peach fragrance</div>
+        <div class="prod-spec">Clay tray included</div>
+        <div class="prod-spec">Custom color available</div>
+      </div>
+      <div class="prod-tags">
+        <span class="prod-tag">Sculptural</span>
+        <span class="prod-tag">Wedding</span>
+        <span class="prod-tag">With tray</span>
+        <span class="prod-tag">Set of 3</span>
+      </div>
+      <div class="price-strip">
+        <div class="price-amount">₹ 849</div>
+        <div>
+          <div class="price-note">Set of 3 + clay tray</div>
+        </div>
+      </div>
+      <a href="#order" class="btn-dark" style="align-self:flex-start">Pre-order</a>
+    </div>
+  </div>
+
+  <!-- 04 DAISY -->
+  <div class="prod-row" style="direction:rtl">
+    <div class="prod-img" style="direction:ltr">
+      <img src="img05.jpg" alt="Daisy Jar Candles">
+      <div class="prod-img-overlay"></div>
+      <span class="sku-chip">BLS-DY-004</span>
+    </div>
+    <div class="prod-content parch-bg" style="direction:ltr">
+      <div class="prod-num">04</div>
+      <div class="prod-cat">Daisy Collection</div>
+      <h3 class="prod-name">Daisy <em>in Bloom</em></h3>
+      <p class="prod-desc">Daisy-sculpted wax set inside a clear glass jar with a gold lid. The daisy blooms up through creamy soy wax — a gift that looks as good closed as it does lit. Chamomile and fresh linen fragrance.</p>
+      <div class="prod-specs">
+        <div class="prod-spec">6–8 hr burn · soy wax</div>
+        <div class="prod-spec">Clear glass jar + gold lid</div>
+        <div class="prod-spec">Chamomile & linen fragrance</div>
+        <div class="prod-spec">Available: red, pink, white daisy</div>
+      </div>
+      <div class="prod-tags">
+        <span class="prod-tag">Daisy sculpt</span>
+        <span class="prod-tag">Gold lid jar</span>
+        <span class="prod-tag">Gifting</span>
+        <span class="prod-tag">Instagram</span>
+      </div>
+      <div class="price-strip">
+        <div class="price-amount">₹ 449</div>
+        <div>
+          <div class="price-note">Starting from · single jar</div>
+        </div>
+      </div>
+      <a href="#order" class="btn-dark" style="align-self:flex-start">Pre-order</a>
+    </div>
+  </div>
+
+  <!-- 05 WAX SACHET -->
+  <div class="prod-row">
+    <div class="prod-img">
+      <img src="img06.jpg" alt="Wax Sachet Bouquet">
+      <div class="prod-img-overlay"></div>
+      <span class="sku-chip">BLS-WS-005</span>
+      <span class="new-chip">Trending</span>
+    </div>
+    <div class="prod-content warm-bg">
+      <div class="prod-num">05</div>
+      <div class="prod-cat">Wax Sachet</div>
+      <h3 class="prod-name">Wax <em>Sachet</em></h3>
+      <p class="prod-desc">Flameless scented daisy wax sachets wrapped in kraft paper with dried florals — a gift that keeps on giving fragrance for 2–3 months. Wardrobes, car, drawers, or a bedside table. No flame needed.</p>
+      <div class="prod-specs">
+        <div class="prod-spec">Fragrance lasts 2–3 months</div>
+        <div class="prod-spec">No flame · no electricity</div>
+        <div class="prod-spec">Wardrobe · car · gift bag sizes</div>
+        <div class="prod-spec">12 fragrances available</div>
+      </div>
+      <div class="prod-tags">
+        <span class="prod-tag">Flameless</span>
+        <span class="prod-tag">Long-lasting</span>
+        <span class="prod-tag">Pack of 3</span>
+        <span class="prod-tag">Gift-ready</span>
+      </div>
+      <div class="price-strip">
+        <div class="price-amount">₹ 349</div>
+        <div>
+          <div class="price-note">Pack of 3 · kraft wrapped</div>
+        </div>
+      </div>
+      <a href="#order" class="btn-dark" style="align-self:flex-start">Pre-order</a>
+    </div>
+  </div>
+</section>
+
+<!-- GIFT COMBOS -->
+<section id="combos" class="sec sec-dark">
+  <div class="wrap" style="margin-bottom:52px">
+    <div class="sec-label" style="color:var(--gold)">Curated Gift Sets</div>
+    <h2 class="sec-title" style="color:var(--cream)">Six <em style="color:var(--gold2)">occasion</em> combos</h2>
+    <p class="sec-sub" style="color:rgba(251,248,243,.42)">Ready-to-gift sets with beautiful packaging. Each combo has a unique SKU for easy ordering. No assembly required.</p>
+  </div>
+  <div class="wrap">
+    <div class="combo-grid">
+
+      <div class="combo-card">
+        <div class="combo-img"><img src="img02.jpg" alt="Diwali Hamper" style="object-position:center top"></div>
+        <span class="oc oc-gold">Diwali</span>
+        <div class="combo-body">
+          <div class="combo-sku">SKU: BLS-CB-DW01</div>
+          <div class="combo-name">Diwali Hamper</div>
+          <div class="combo-occ">The Festival of Light Edit</div>
+          <ul class="combo-list">
+            <li>2 pillar candles — gold & terracotta</li>
+            <li>1 votive jar (oud / sandalwood)</li>
+            <li>6 tealights — mixed warm shades</li>
+            <li>Kraft box · Diwali card · ribbon</li>
+          </ul>
+          <div class="combo-footer">
+            <div>
+              <div class="combo-old">₹ 1,199</div>
+              <div class="combo-price">₹ 899</div>
+            </div>
+            <div class="combo-badge">Save ₹ 300</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="combo-card">
+        <div class="combo-img"><img src="img04.png" alt="Valentine" style="object-fit:contain;padding:24px;background:var(--warm)"></div>
+        <span class="oc oc-rose">Valentine's</span>
+        <div class="combo-body">
+          <div class="combo-sku">SKU: BLS-CB-VL02</div>
+          <div class="combo-name">Romance Edit</div>
+          <div class="combo-occ">Say it with a bloom</div>
+          <ul class="combo-list">
+            <li>2 peony sculpted candles</li>
+            <li>Clay tray (white / blush)</li>
+            <li>6 rose-scented tealights</li>
+            <li>Red ribbon · message card</li>
+          </ul>
+          <div class="combo-footer">
+            <div>
+              <div class="combo-old">₹ 899</div>
+              <div class="combo-price">₹ 699</div>
+            </div>
+            <div class="combo-badge">Save ₹ 200</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="combo-card">
+        <div class="combo-img"><img src="img07.jpg" alt="Wedding"></div>
+        <span class="oc oc-sage">Wedding</span>
+        <div class="combo-body">
+          <div class="combo-sku">SKU: BLS-CB-WD03</div>
+          <div class="combo-name">Return Gift Set</div>
+          <div class="combo-occ">A memory they'll light at home</div>
+          <ul class="combo-list">
+            <li>1 pillar candle (event color)</li>
+            <li>3 tealights — matching shade</li>
+            <li>Custom printed thank-you card</li>
+            <li>Organza bag or mini box</li>
+          </ul>
+          <div class="combo-footer">
+            <div>
+              <div class="combo-price" style="font-size:18px">₹ 249 <span style="font-size:11px;color:rgba(251,248,243,.25)">/unit</span></div>
+            </div>
+            <div class="combo-badge">MOQ 30 sets</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="combo-card">
+        <div class="combo-img"><img src="img03.jpg" alt="Corporate" style="object-position:30% center"></div>
+        <span class="oc oc-gold">Corporate</span>
+        <div class="combo-body">
+          <div class="combo-sku">SKU: BLS-CB-CP04</div>
+          <div class="combo-name">Executive Gift</div>
+          <div class="combo-occ">Leave a lasting impression</div>
+          <ul class="combo-list">
+            <li>1 large branded votive jar</li>
+            <li>Custom company logo on label</li>
+            <li>Rigid magnetic closure box</li>
+            <li>Choice of 6 premium fragrances</li>
+          </ul>
+          <div class="combo-footer">
+            <div>
+              <div class="combo-price" style="font-size:18px">₹ 499 <span style="font-size:11px;color:rgba(251,248,243,.25)">/unit</span></div>
+            </div>
+            <div class="combo-badge">MOQ 20 units</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="combo-card">
+        <div class="combo-img"><img src="img06.jpg" alt="Festival Edit" style="object-fit:contain;padding:20px;background:#FAF3E8"></div>
+        <span class="oc oc-rose">Festival</span>
+        <div class="combo-body">
+          <div class="combo-sku">SKU: BLS-CB-FE05</div>
+          <div class="combo-name">Festival Edit</div>
+          <div class="combo-occ">The premium signature set</div>
+          <ul class="combo-list">
+            <li>3 peony candles + clay tray</li>
+            <li>1 votive jar candle</li>
+            <li>1 wax sachet pack</li>
+            <li>Gift box + foil message card</li>
+          </ul>
+          <div class="combo-footer">
+            <div>
+              <div class="combo-old">₹ 1,799</div>
+              <div class="combo-price">₹ 1,399</div>
+            </div>
+            <div class="combo-badge">Save ₹ 400</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BYOB CARD -->
+      <div class="combo-card" style="border-color:rgba(184,133,42,.3)">
+        <div class="combo-img" style="background:var(--ink);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px">
+          <div style="font-family:Cormorant Garamond,serif;font-size:56px;font-weight:300;color:var(--gold);letter-spacing:.08em;line-height:1">BYOB</div>
+          <div style="font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:rgba(251,248,243,.28)">Build Your Own Box</div>
+        </div>
+        <span class="oc oc-cream">Trending</span>
+        <div class="combo-body">
+          <div class="combo-sku">SKU: BLS-CB-BY06</div>
+          <div class="combo-name">BYOB Box</div>
+          <div class="combo-occ">You pick, we assemble</div>
+          <ul class="combo-list">
+            <li>Choose 3–8 items from full range</li>
+            <li>Box S / M / L — your size</li>
+            <li>Custom color theme for all products</li>
+            <li>Message card in your language</li>
+          </ul>
+          <div class="combo-footer">
+            <div>
+              <div style="font-size:11px;color:rgba(251,248,243,.25);margin-bottom:2px">Starts from</div>
+              <div class="combo-price">₹ 599</div>
+            </div>
+            <div class="combo-badge">Fully custom</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- BYOB STEPS -->
+<section id="byob" class="sec sec-warm">
+  <div class="wrap">
+    <div class="sec-label">How It Works</div>
+    <h2 class="sec-title">Build Your <em>Own Box</em></h2>
+    <p class="sec-sub">The fastest-growing gifting format — choose your items, size, and theme. We handle the rest.</p>
+    <div class="byob-grid">
+      <div class="byob-step">
+        <div class="byob-n">01</div>
+        <div class="byob-t">Pick Your Items</div>
+        <div class="byob-d">Choose 3–8 products from our full range — tealights, jars, peonies, daisies, or sachets. Any combination.</div>
+      </div>
+      <div class="byob-step">
+        <div class="byob-n">02</div>
+        <div class="byob-t">Choose Box Size</div>
+        <div class="byob-d">Small (3 items · ₹ 599), Medium (5 items · ₹ 899), Large (8 items · ₹ 1,399). Fixed tiers, simple pricing.</div>
+      </div>
+      <div class="byob-step">
+        <div class="byob-n">03</div>
+        <div class="byob-t">Select Color Theme</div>
+        <div class="byob-d">All items can be made in your chosen palette — gold for Diwali, pastels for showers, reds for Valentine's.</div>
+      </div>
+      <div class="byob-step">
+        <div class="byob-n">04</div>
+        <div class="byob-t">We Pack & Deliver</div>
+        <div class="byob-d">Branded kraft box, ribbon, and a message card in Gujarati, Hindi, or English. Delivered in 3–5 days in Ahmedabad.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ORDER -->
+<section id="order" class="order-sec">
+  <div class="order-title">Reserve your order —<br><em>no payment now</em></div>
+  <p class="order-sub">We handcraft everything after you confirm. Share your SKU, quantity, and any custom requirements over WhatsApp.</p>
+  <a href="https://wa.me/919999999999?text=Hi+Blossiere!+I+saw+your+catalogue+and+would+like+to+pre-order.+SKU+%2F+Quantity+%2F+Custom+needs%3A" class="wa-big" target="_blank">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    Order on WhatsApp
+  </a>
+  <div class="trust-row">
+    <span class="trust-item">No payment now</span>
+    <span class="trust-item">Sample on request</span>
+    <span class="trust-item">Ahmedabad delivery</span>
+    <span class="trust-item">Reply within 24 hrs</span>
+    <span class="trust-item">Custom orders welcome</span>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-logo">Blossière</div>
+  <div class="foot-line">Handcrafted Candles · Ahmedabad, Gujarat · Pre-launch 2025</div>
+</footer>
+
+<a class="sticky-wa" href="https://wa.me/919999999999?text=Hi+Blossiere!" target="_blank">
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+  Order Now
+</a>
+
+</body>
+</html>
